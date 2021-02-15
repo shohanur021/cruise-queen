@@ -145,13 +145,15 @@
         }
 
         function confirmation(){
-            document.getElementById('confermation').style.display="block";
-            document.getElementById("firstClassCount").innerText=getInputValue("firstClass");
-            document.getElementById("economyCount").innerText=getInputValue("economy");
-            document.getElementById("payment").innerText=document.getElementById("total").innerText; 
-            var elements = document.getElementsByClassName('mainPart');
-            elements[0].style.display="none";
-            elements[1].style.display="none";
+            if(getInputValue("firstClass") != 0  || getInputValue("economy") != 0){
+                document.getElementById('confermation').style.display="block";
+                document.getElementById("firstClassCount").innerText=getInputValue("firstClass");
+                document.getElementById("economyCount").innerText=getInputValue("economy");
+                document.getElementById("payment").innerText=document.getElementById("total").innerText; 
+                var elements = document.getElementsByClassName('mainPart');
+                elements[0].style.display="none";
+                elements[1].style.display="none";
+            }
         }
         function handleBack(){
             var elements = document.getElementsByClassName('mainPart');
